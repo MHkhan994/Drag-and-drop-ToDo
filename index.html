@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/e4ed682f4b.js" crossorigin="anonymous"></script>
+
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-900">
+    <header>
+        <h1 class="text-white text-4xl text-center font-semibold pt-5">Persistent  <span class="text-amber-600">ToDo</span> List</h1>
+    </header>
+    <main> 
+        <section class="flex justify-center items-center lg:w-11/12 w-full mx-auto flex-col">
+            <div class="pt-4">
+                <input class="px-4 py-2 rounded-sm" type="text" id="input-field">
+                <button class="text-white px-4 py-2 bg-orange-700" id="add-task">Add Task</button>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-4 lg:p-7 p-3 w-full">
+                <div class="bg-slate-800 py-3 rounded-md">
+                    <h2 class="text-center text-white text-2xl">ToDo</h2>
+                    <div class="todo container p-4">
+                        
+                    </div>
+                </div>    
+                <div class="bg-slate-800 py-3 rounded-md">
+                    <h2 class="text-center text-white text-2xl">Working on</h2>
+                    <div class="work-on container p-4">
+                        
+                    </div>
+                </div>    
+                <div class="bg-slate-800 py-3 rounded-md">
+                    <h2 class="text-center text-white text-2xl">Completed</h2>
+                    <div class="complete container p-4">
+                        
+                    </div>
+                </div>    
+            </div>
+        </section>
+    </main>
+    
+    <script src="./todo.js"></script>
+</body>
+</html>

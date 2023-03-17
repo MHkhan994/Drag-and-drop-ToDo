@@ -1,0 +1,7 @@
+.dragging{
+    opacity: .5;
+}
+
+.container{
+    min-height: 200px;
+}
