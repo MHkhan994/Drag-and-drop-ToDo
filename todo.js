@@ -40,6 +40,7 @@ const addTask = () =>{
         div.addEventListener('dragend', (e) => {
             e.target.classList.remove('dragging')
         })
+    
     }
 
 }
@@ -84,4 +85,14 @@ addTaskEl.addEventListener('click', () => {
 })
 
 addTask()
+
+const remove = (e) =>{
+    console.log(e.parentNode.innerText)
+    const dragTask = tasks.find(task => task.text === e.parentNode.innerText)
+    const index = tasks.indexOf(dragTask)
+    tasks.splice(index, index+1)
+    localStorage.setItem('tasks', JSON.stringify(tasks))       
+    e.parentNode.parentNode.removeChild(e.parentNode);
+    addTask()
+}
 
