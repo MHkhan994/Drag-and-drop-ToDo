@@ -15,10 +15,10 @@ const addTask = () =>{
 
     for(let i = 0; i < tasks.length; i++){
         const div = document.createElement('div')
-        div.classList.add('draggable', 'bg-slate-100', 'text-xl', 'p-2', 'rounded-sm', 'flex', 'justify-between','my-2');
+        div.classList.add('w-full','draggable', 'bg-slate-100', 'text-xl', 'p-2', 'rounded-sm', 'flex', 'justify-between','my-2');
         div.setAttribute('draggable','true')
         div.innerHTML = `
-        ${tasks[i].text}
+        <h2>${tasks[i].text}</h2>
         <button onclick="remove(this)"><i class="fa-solid fa-trash"></i></button>
     `
 
@@ -65,12 +65,12 @@ containers.forEach(container => {
         }
         else if(e.target.classList.contains('work-on')){
             tasks[index].status = 'workon'
-        }
-        else if(e.target.classList.contains('complete')){
+        } 
+    else if(e.target.classList.contains('complete')){
             tasks[index].status = 'complete'
         }
 
-        localStorage.setItem('tasks', JSON.stringify(tasks))       
+    localStorage.setItem('tasks', JSON.stringify(tasks))       
         addTask()
     })
 })
@@ -87,10 +87,10 @@ addTaskEl.addEventListener('click', () => {
 addTask()
 
 const remove = (e) =>{
-    console.log(e.parentNode.innerText)
+    console.log(e.parentNode)
     const dragTask = tasks.find(task => task.text === e.parentNode.innerText)
     const index = tasks.indexOf(dragTask)
-    tasks.splice(index, index+1)
+    tasks.splice(index,1)
     localStorage.setItem('tasks', JSON.stringify(tasks))       
     e.parentNode.parentNode.removeChild(e.parentNode);
     addTask()
